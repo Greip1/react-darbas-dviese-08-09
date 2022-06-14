@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Button from '../UI/Button';
 
 function AddLog() {
+  const { petId } = useParams();
+
   const [statusValue, setStatusValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
 
@@ -16,8 +19,9 @@ function AddLog() {
   function addNewLog(e) {
     e.preventDefault();
     const newLog = {
-      status: statusValue,
+      pet_id: petId,
       description: descriptionValue,
+      status: statusValue,
     };
     console.log(newLog);
     sendValue(newLog);
@@ -34,18 +38,13 @@ function AddLog() {
   return (
     <div>
       <h1>Add new log</h1>
-      <form onSubmit={addNewLog} className="form">
-        <input
-          onChange={statusHandler}
-          value={statusValue}
-          type="text"
-          placeholder="Status"
-        />
+      <form onSubmit={addNewLog} className='form'>
+        <input onChange={statusHandler} value={statusValue} type='text' placeholder='Status' />
         <input
           onChange={descriptionHandler}
           value={descriptionValue}
-          type="text"
-          placeholder="Description"
+          type='text'
+          placeholder='Description'
         />
 
         <Button> Add</Button>

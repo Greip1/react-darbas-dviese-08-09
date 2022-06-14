@@ -8,12 +8,9 @@ function PetsCard({ id, name, dob, client_email, archived }) {
     delFromDb(delId);
   }
   async function delFromDb(delId) {
-    const res = await fetch(
-      `https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`,
-      {
-        method: 'DELETE',
-      }
-    );
+    const res = await fetch(`https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`, {
+      method: 'DELETE',
+    });
     const dataInJs = await res.json();
     console.log(dataInJs);
   }
@@ -23,8 +20,10 @@ function PetsCard({ id, name, dob, client_email, archived }) {
       <p className={css.date}>{dob}</p>
       <p className={css.email}>{client_email}</p>
       <div>
-        <Link to={'log'}>
-          <Button klase={css.btn}>VIEW LOG</Button>
+        <Link to={`/log/${id}`}>
+          <Button klase={css.btn} id={id}>
+            VIEW LOG
+          </Button>
         </Link>
 
         <Button onClick={delPet} id={id} clas={'reverse'}>

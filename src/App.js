@@ -12,7 +12,7 @@ import PetsPage from './pages/PetsPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Navigation />
       <Switch>
         <Route path={'/pets'}>
@@ -27,10 +27,10 @@ function App() {
         <Route path={'/addMeds'}>
           <AddMeds />
         </Route>
-        <Route path={'/log'}>
+        <Route path={'/log/:petId'}>
           <LogsPage />
         </Route>
-        <Route path={'/addLog'}>
+        <Route path={'/addLog/:petId'}>
           <AddLog />
         </Route>
       </Switch>
