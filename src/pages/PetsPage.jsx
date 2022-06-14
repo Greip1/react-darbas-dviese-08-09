@@ -1,5 +1,11 @@
+import PetsCardList from '../components/Pets/PetsCardList';
+
 function PetsPage() {
-  return <div>PetsPage</div>;
+  return (
+    <div>
+      <PetsCardList />
+    </div>
+  );
 }
 
 export default PetsPage;
