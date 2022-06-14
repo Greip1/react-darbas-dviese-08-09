@@ -1,0 +1,20 @@
+:root {
+    --main-color: #fb8115;
+  }
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+    color: rgb(95, 91, 91);
+  box-sizing: border-box;
+}
+.link{
+  text-decoration: none;
+  color: var(--main-color);
+padding: 20px;
+}
+.pets-title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}

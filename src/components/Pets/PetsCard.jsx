@@ -9,7 +9,7 @@ function PetsCard() {
       <p className={css.email}>Email</p>
       <div>
         <Button>VIEW LOG</Button>
-        <Button>DELETE</Button>
+        <Button clas={'reverse'}>DELETE</Button>
       </div>
     </div>
   );

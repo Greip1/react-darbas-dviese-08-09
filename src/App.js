@@ -1,6 +1,7 @@
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import MedicationPage from './pages/MedicationPage';
 import PetsPage from './pages/PetsPage';
@@ -17,6 +18,7 @@ function App() {
           <MedicationPage />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
