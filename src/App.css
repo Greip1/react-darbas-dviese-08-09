@@ -1,20 +1,29 @@
 :root {
-    --main-color: #fb8115;
-  }
+  --main-color: #fb8115;
+}
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
-    color: rgb(95, 91, 91);
+  color: rgb(95, 91, 91);
   box-sizing: border-box;
 }
-.link{
+.App {
+  max-width: 800px;
+  margin: 0px auto;
+}
+.link {
   text-decoration: none;
   color: var(--main-color);
-padding: 20px;
+  padding: 20px;
 }
-.pets-title-container{
+.pets-title-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+}
+/* // ------------------------Add pet ---- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

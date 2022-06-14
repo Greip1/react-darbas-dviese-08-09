@@ -15,7 +15,7 @@ function Navigation() {
           Pets
         </NavLink>
         <NavLink className="link" to="/meds">
-          Medication
+          Medications
         </NavLink>
       </div>
     </nav>

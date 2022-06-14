@@ -1,8 +1,12 @@
 import css from './Style.module.css';
 
-function Button({ children, clas }) {
+function Button({ children, id, clas, klase, onClick }) {
+  // console.log('klase', klase);
   return (
-    <button className={clas === 'reverse' ? css.reverseBtn : css.mainColorBtn}>
+    <button
+      onClick={() => onClick(id)}
+      className={clas === 'reverse' ? `${css.reverseBtn} ` : `${css.mainColorBtn} ${klase}`}
+    >
       {children}
     </button>
   );

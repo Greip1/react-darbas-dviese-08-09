@@ -3,6 +3,8 @@ import { Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
+import AddMeds from './pages/AddMeds';
+import AddPet from './pages/AddPet';
 import MedicationPage from './pages/MedicationPage';
 import PetsPage from './pages/PetsPage';
 
@@ -16,6 +18,12 @@ function App() {
         </Route>
         <Route path={'/meds'}>
           <MedicationPage />
+        </Route>
+        <Route path={'/add'}>
+          <AddPet />
+        </Route>
+        <Route path={'/addMeds'}>
+          <AddMeds />
         </Route>
       </Switch>
       <Footer />
