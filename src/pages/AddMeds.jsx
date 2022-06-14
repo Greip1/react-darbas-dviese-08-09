@@ -25,7 +25,7 @@ function AddMeds() {
     sendValue(newMed);
   }
   async function sendValue(newMed) {
-    const res = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/meds', {
+    const res = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/meds/', {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(newMed),
@@ -36,13 +36,13 @@ function AddMeds() {
   }
   return (
     <div>
-      <form onSubmit={addNewMed} className="form">
-        <input onChange={nameHandler} value={nameValue} type="text" placeholder="Name" />
+      <form onSubmit={addNewMed} className='form'>
+        <input onChange={nameHandler} value={nameValue} type='text' placeholder='Name' />
         <input
           onChange={descriptionHandler}
           value={descriptionValue}
-          type="text"
-          placeholder="Description"
+          type='text'
+          placeholder='Description'
         />
 
         <Button> Add</Button>

@@ -6,9 +6,9 @@ function PetsCardList() {
   const [petsArr, setPetsArr] = useState([]);
 
   async function getPets() {
-    const res = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/pets');
+    const res = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/pets/');
     const dataInJs = await res.json();
-    console.log('Pets arr', dataInJs);
+    console.table('Pets arr', dataInJs);
     setPetsArr(dataInJs);
   }
   useEffect(() => {
