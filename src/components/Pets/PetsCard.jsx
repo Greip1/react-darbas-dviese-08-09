@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button';
 import css from './Pets.module.css';
 
@@ -11,7 +12,6 @@ function PetsCard({ id, name, dob, client_email, archived }) {
       method: 'DELETE',
     });
     const dataInJs = await res.json();
-    console.log(`https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`);
     console.log(dataInJs);
   }
   return (
@@ -20,7 +20,10 @@ function PetsCard({ id, name, dob, client_email, archived }) {
       <p className={css.date}>{dob}</p>
       <p className={css.email}>{client_email}</p>
       <div>
-        <Button klase={css.btn}>VIEW LOG</Button>
+        <Link to={'log'}>
+          <Button klase={css.btn}>VIEW LOG</Button>
+        </Link>
+
         <Button onClick={delPet} id={id} clas={'reverse'}>
           DELETE
         </Button>
