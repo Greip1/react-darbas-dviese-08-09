@@ -41,6 +41,8 @@ function AddPet() {
   }
   return (
     <div>
+      <h1>Add new pet</h1>
+
       <form onSubmit={addNewPet} className="form">
         <input onChange={nameHandler} value={nameValue} type="text" placeholder="Name" />
         <input

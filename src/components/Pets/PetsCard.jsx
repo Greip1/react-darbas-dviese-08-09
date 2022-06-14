@@ -8,9 +8,12 @@ function PetsCard({ id, name, dob, client_email, archived }) {
     delFromDb(delId);
   }
   async function delFromDb(delId) {
-    const res = await fetch(`https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`, {
-      method: 'DELETE',
-    });
+    const res = await fetch(
+      `https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`,
+      {
+        method: 'DELETE',
+      }
+    );
     const dataInJs = await res.json();
     console.log(dataInJs);
   }

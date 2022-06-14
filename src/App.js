@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
+import AddLog from './pages/AddLog';
 import AddMeds from './pages/AddMeds';
 import AddPet from './pages/AddPet';
 import { LogsPage } from './pages/LogsPage';
@@ -11,7 +12,7 @@ import PetsPage from './pages/PetsPage';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Navigation />
       <Switch>
         <Route path={'/pets'}>
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path={'/log'}>
           <LogsPage />
+        </Route>
+        <Route path={'/addLog'}>
+          <AddLog />
         </Route>
       </Switch>
       <Footer />

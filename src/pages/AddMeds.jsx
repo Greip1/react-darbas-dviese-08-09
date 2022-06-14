@@ -36,13 +36,15 @@ function AddMeds() {
   }
   return (
     <div>
-      <form onSubmit={addNewMed} className='form'>
-        <input onChange={nameHandler} value={nameValue} type='text' placeholder='Name' />
+      <h1>Add new medication</h1>
+
+      <form onSubmit={addNewMed} className="form">
+        <input onChange={nameHandler} value={nameValue} type="text" placeholder="Name" />
         <input
           onChange={descriptionHandler}
           value={descriptionValue}
-          type='text'
-          placeholder='Description'
+          type="text"
+          placeholder="Description"
         />
 
         <Button> Add</Button>
