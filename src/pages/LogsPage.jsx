@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import LogsCardList from '../components/Logs/LogsCardList';
 import Button from '../UI/Button';
 
 export const LogsPage = () => {
@@ -25,6 +26,9 @@ export const LogsPage = () => {
         <button>
           Prescription<i className='fa fa-check' aria-hidden='true'></i>
         </button>
+      </div>
+      <div>
+        <LogsCardList />
       </div>
       {/* <PetsCardList /> */}
     </div>
