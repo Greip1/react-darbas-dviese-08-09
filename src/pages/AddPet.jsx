@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../UI/Button';
 
 function AddPet() {
@@ -6,7 +7,10 @@ function AddPet() {
   const [gimValue, setGimValue] = useState('');
   const [emailValue, setEmailValue] = useState('');
 
+  const [postResponse, setPostResponse] = useState({ err: 'error' });
+
   const [newPet, setNewPet] = useState({});
+
   const newId = Math.random().toString().split('.')[1];
 
   console.log(newId);
@@ -38,22 +42,54 @@ function AddPet() {
     const dataInJs = await res.json();
     setNewPet(dataInJs);
     console.log(dataInJs);
+
+    setPostResponse(dataInJs);
+  }
+  function clearStateAndInputs() {
+    setPostResponse({ err: 'error' });
+    setEmailValue('');
+    setGimValue('');
+    setNameValue('');
   }
   return (
     <div>
       <h1>Add new pet</h1>
+      {postResponse.err ? (
+        <form onSubmit={addNewPet} className="form">
+          {postResponse.err !== 'error' && <h2>Neteisingi duomenys</h2>}
 
-      <form onSubmit={addNewPet} className='form'>
-        <input onChange={nameHandler} value={nameValue} type='text' placeholder='Name' />
-        <input
-          onChange={gimHandler}
-          value={gimValue}
-          type='date'
-          placeholder='Gimtadienis 2022-02-01 '
-        />
-        <input onChange={emailHandler} value={emailValue} type='email' placeholder='Email' />
-        <Button> Add</Button>
-      </form>
+          <input
+            onChange={nameHandler}
+            value={nameValue}
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            onChange={gimHandler}
+            value={gimValue}
+            type="date"
+            placeholder="Gimtadienis 2022-02-01 "
+          />
+          <input
+            onChange={emailHandler}
+            value={emailValue}
+            type="email"
+            placeholder="Email"
+          />
+          <Button> Add</Button>
+        </form>
+      ) : (
+        <div className="success">
+          <p>Pet added successfully</p>
+          <Link to={'pets'}>
+            <Button>Go to Pet List</Button>
+          </Link>
+
+          <Link to={'add'}>
+            <Button onClick={clearStateAndInputs}>Add more pets</Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
