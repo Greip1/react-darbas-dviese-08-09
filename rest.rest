@@ -1,0 +1,17 @@
+###------------------------------GET /pets
+GET https://glittery-dull-snickerdoodle.glitch.me/v1/pets/
+
+###----------------------------POST /pets
+
+POST https://glittery-dull-snickerdoodle.glitch.me/v1/pets
+Content-Type: application/json
+
+   { 
+    "name": "Kate2",
+    "dob": "2020-02-02",
+    "client_email": "au@kemail.com"    
+  }
+
+###----------------------------DELETE /pets/:id
+
+DELETE https://glittery-dull-snickerdoodle.glitch.me/v1/pets/112
