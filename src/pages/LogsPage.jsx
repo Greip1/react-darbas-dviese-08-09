@@ -15,7 +15,7 @@ export const LogsPage = () => {
   //   console.log(vardas);
   const { petId } = useParams();
   const { search } = useLocation();
-  console.log(search);
+  console.log(petId);
   const petName = search.split('=')[1];
   console.log(petName);
 
@@ -27,7 +27,7 @@ export const LogsPage = () => {
       <div className='pets-title-container'>
         <h1 className='pets-title'>{petName}: Health Records</h1>
         <div>
-          <Link to={'addPrecription'}>
+          <Link to={`/addPrescriptions/${petId}`}>
             <Button>ADD PRESCRIPTION</Button>
           </Link>
           <Link to={`/addLog/${petId}`}>
