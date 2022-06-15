@@ -1,14 +1,31 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import LogsCardList from '../components/Logs/LogsCardList';
 import Button from '../UI/Button';
 
+// function useQuery() {
+//   const { search } = useLocation();
+
+//   return React.useMemo(() => new URLSearchParams(search), [search]);
+// }
+
 export const LogsPage = () => {
+  //   let query = useQuery();
+  //   const vardas = query.get('petName');
+  //   console.log(vardas);
   const { petId } = useParams();
+  const { search } = useLocation();
+  console.log(search);
+  const petName = search.split('=')[1];
+  console.log(petName);
+
+  function getName(name) {
+    console.log('Gaunasm Name', name);
+  }
   return (
     <div>
       <div className='pets-title-container'>
-        <h1 className='pets-title'>Pets List</h1>
+        <h1 className='pets-title'>{petName}: Health Records</h1>
         <div>
           <Link to={'addPrecription'}>
             <Button>ADD PRESCRIPTION</Button>
@@ -28,7 +45,7 @@ export const LogsPage = () => {
         </button>
       </div>
       <div>
-        <LogsCardList />
+        <LogsCardList getName={getName} />
       </div>
       {/* <PetsCardList /> */}
     </div>

@@ -43,20 +43,15 @@ function AddPet() {
     <div>
       <h1>Add new pet</h1>
 
-      <form onSubmit={addNewPet} className="form">
-        <input onChange={nameHandler} value={nameValue} type="text" placeholder="Name" />
+      <form onSubmit={addNewPet} className='form'>
+        <input onChange={nameHandler} value={nameValue} type='text' placeholder='Name' />
         <input
           onChange={gimHandler}
           value={gimValue}
-          type="text"
-          placeholder="Gimtadienis 2022-02-01 "
+          type='date'
+          placeholder='Gimtadienis 2022-02-01 '
         />
-        <input
-          onChange={emailHandler}
-          value={emailValue}
-          type="email"
-          placeholder="Email"
-        />
+        <input onChange={emailHandler} value={emailValue} type='email' placeholder='Email' />
         <Button> Add</Button>
       </form>
     </div>

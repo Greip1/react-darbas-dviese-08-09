@@ -20,7 +20,7 @@ function PetsCard({ id, name, dob, client_email, archived }) {
       <p className={css.date}>{dob}</p>
       <p className={css.email}>{client_email}</p>
       <div>
-        <Link to={`/log/${id}`}>
+        <Link to={`/log/${id}?petName=${name}`}>
           <Button klase={css.btn} id={id}>
             VIEW LOG
           </Button>
