@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getFetch } from '../Helper/fetch';
 
-function Search({ title }) {
+function Search({ title, lift }) {
   const [inputValue, setInputValue] = useState();
   const [dataArr, setDataArr] = useState([]);
 
@@ -15,17 +15,17 @@ function Search({ title }) {
   }
 
   function findObj(x) {
-    const foundOb = dataArr.filter((ob) =>
-      ob.name.toLowerCase().includes(x.toLowerCase())
-    );
+    const foundOb = dataArr.filter((ob) => ob.name.toLowerCase().includes(x.toLowerCase()));
     console.log('foundOb', foundOb);
     setDataArr(foundOb);
+    lift(foundOb);
+    getFetch('pets', setDataArr);
   }
 
   return (
     <div>
-      <i className="fa fa-search" aria-hidden="true"></i>
-      <input onInput={inputHandler} className="" type="search" placeholder={`${title}`} />
+      <i className='fa fa-search' aria-hidden='true'></i>
+      <input onInput={inputHandler} className='' type='search' placeholder={`${title}`} />
     </div>
   );
 }
