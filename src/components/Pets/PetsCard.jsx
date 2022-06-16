@@ -3,6 +3,7 @@ import Button from '../../UI/Button';
 import css from './Pets.module.css';
 
 function PetsCard({ id, name, dob, client_email, archived }) {
+  const newdob = new Date(dob).toDateString();
   function delPet(delId) {
     console.log('Trinam zveri', delId);
     delFromDb(delId);
@@ -17,7 +18,7 @@ function PetsCard({ id, name, dob, client_email, archived }) {
   return (
     <div className={css.card}>
       <h3 className={css.name}>{name}</h3>
-      <p className={css.date}>{dob}</p>
+      <p className={css.date}>{newdob}</p>
       <p className={css.email}>{client_email}</p>
       <div>
         <Link to={`/log/${id}?petName=${name}`}>
