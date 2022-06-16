@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import AddContainer from '../components/AddContainer/AddContainer';
 import Button from '../UI/Button';
 
 function AddLog() {
@@ -36,20 +37,25 @@ function AddLog() {
     console.log(dataInJs);
   }
   return (
-    <div>
+    <AddContainer>
       <h1>Add new log</h1>
-      <form onSubmit={addNewLog} className='form'>
-        <input onChange={statusHandler} value={statusValue} type='text' placeholder='Status' />
+      <form onSubmit={addNewLog} className="form">
+        <input
+          onChange={statusHandler}
+          value={statusValue}
+          type="text"
+          placeholder="Status"
+        />
         <input
           onChange={descriptionHandler}
           value={descriptionValue}
-          type='text'
-          placeholder='Description'
+          type="text"
+          placeholder="Description"
         />
 
         <Button> Add</Button>
       </form>
-    </div>
+    </AddContainer>
   );
 }
 

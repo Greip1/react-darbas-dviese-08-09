@@ -14,8 +14,8 @@ function PetsPage() {
 
   return (
     <div>
-      <div className='pets-title-container'>
-        <h1 className='pets-title'>Pets List</h1>
+      <div className="pets-title-container">
+        <h1 className="pets-title">Pets List</h1>
 
         <Link to={'add'}>
           <Button>ADD PET</Button>

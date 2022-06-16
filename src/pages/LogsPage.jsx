@@ -24,8 +24,8 @@ export const LogsPage = () => {
   }
   return (
     <div>
-      <div className='pets-title-container'>
-        <h1 className='pets-title'>{petName}: Health Records</h1>
+      <div className="pets-title-container">
+        <h1 className="pets-title">{petName}: Health Records</h1>
         <div>
           <Link to={`/addPrescriptions/${petId}`}>
             <Button>ADD PRESCRIPTION</Button>
@@ -35,14 +35,13 @@ export const LogsPage = () => {
           </Link>
         </div>
       </div>
-      <div className='filter'>
-        <p className='filter-title'>Display:</p>
-        <button>
-          LOGS <i className='fa fa-check' aria-hidden='true'></i>
-        </button>
-        <button>
-          Prescription<i className='fa fa-check' aria-hidden='true'></i>
-        </button>
+      <div className="filter">
+        <Button>
+          LOGS <i className="fa fa-check" aria-hidden="true"></i>
+        </Button>
+        <Button>
+          Prescription<i className="fa fa-check" aria-hidden="true"></i>
+        </Button>
       </div>
       <div>
         <LogsCardList getName={getName} />

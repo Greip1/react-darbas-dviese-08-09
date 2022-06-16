@@ -6,7 +6,9 @@ body {
     Verdana, sans-serif;
   color: rgb(95, 91, 91);
   box-sizing: border-box;
+  padding: 20px;
 }
+
 .App {
   max-width: 800px;
   margin: 0px auto;
@@ -26,4 +28,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.error{
+  color:red ;
+}
+.success {
+text-align: center;
+}
+
+button{
+  margin:10px ;
 }
