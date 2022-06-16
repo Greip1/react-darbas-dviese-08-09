@@ -12,9 +12,11 @@ function MedsCardList() {
 
   return (
     <div className={css.container}>
-      {medsArr.map((obj) => (
-        <MedsCard key={obj.id} {...obj} />
-      ))}
+      {medsArr
+        .filter((ob) => ob.name)
+        .map((obj) => (
+          <MedsCard key={obj.id} {...obj} />
+        ))}
     </div>
   );
 }

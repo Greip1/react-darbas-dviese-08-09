@@ -1,16 +1,20 @@
 .footerCont{
     text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 50px;
-
+    margin-bottom: 20px;
+    margin-top: 10px;
+border-bottom: rgb(232, 227, 227) solid 1px;
 }
 .img {
 width: 100px;
+margin-bottom: 10px;
 }
 .link{
     text-decoration: none;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AddContainer from '../components/AddContainer/AddContainer';
 import Button from '../UI/Button';
 
 function AddPet() {
@@ -52,11 +53,11 @@ function AddPet() {
     setNameValue('');
   }
   return (
-    <div>
-      <h1>Add new pet</h1>
+    <AddContainer>
       {postResponse.err ? (
         <form onSubmit={addNewPet} className="form">
-          {postResponse.err !== 'error' && <h2>Neteisingi duomenys</h2>}
+          {postResponse.err !== 'error' && <h2 className="error">Neteisingi duomenys</h2>}
+          <h1>Add new pet</h1>
 
           <input
             onChange={nameHandler}
@@ -80,7 +81,7 @@ function AddPet() {
         </form>
       ) : (
         <div className="success">
-          <p>Pet added successfully</p>
+          <h2>Pet added successfully</h2>
           <Link to={'pets'}>
             <Button>Go to Pet List</Button>
           </Link>
@@ -90,7 +91,7 @@ function AddPet() {
           </Link>
         </div>
       )}
-    </div>
+    </AddContainer>
   );
 }
 

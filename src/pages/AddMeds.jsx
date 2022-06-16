@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddContainer from '../components/AddContainer/AddContainer';
 import Button from '../UI/Button';
 
 function AddMeds() {
@@ -35,7 +36,7 @@ function AddMeds() {
     // setNewMed(dataInJs);
   }
   return (
-    <div>
+    <AddContainer>
       <h1>Add new medication</h1>
 
       <form onSubmit={addNewMed} className="form">
@@ -49,7 +50,7 @@ function AddMeds() {
 
         <Button> Add</Button>
       </form>
-    </div>
+    </AddContainer>
   );
 }
 

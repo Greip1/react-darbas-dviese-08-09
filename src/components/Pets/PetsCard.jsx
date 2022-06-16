@@ -3,15 +3,18 @@ import Button from '../../UI/Button';
 import css from './Pets.module.css';
 
 function PetsCard({ id, name, dob, client_email, archived }) {
-  const newdob = new Date(dob).toDateString();
+  const newdob = new Date(dob).toISOString().split('T')[0];
   function delPet(delId) {
     console.log('Trinam zveri', delId);
     delFromDb(delId);
   }
   async function delFromDb(delId) {
-    const res = await fetch(`https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`, {
-      method: 'DELETE',
-    });
+    const res = await fetch(
+      `https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${delId}`,
+      {
+        method: 'DELETE',
+      }
+    );
     const dataInJs = await res.json();
     console.log(dataInJs);
   }
