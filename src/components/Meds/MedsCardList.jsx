@@ -1,18 +1,13 @@
 import { useEffect, useState } from 'react';
 import MedsCard from './MedsCard';
 import css from '../Pets/Pets.module.css';
+import { getFetch } from '../../Helper/fetch';
 
 function MedsCardList() {
   const [medsArr, setMedsArr] = useState([]);
 
-  async function getMeds() {
-    const res = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/meds');
-    const dataInJs = await res.json();
-    console.log('Meds arr', dataInJs);
-    setMedsArr(dataInJs);
-  }
   useEffect(() => {
-    getMeds();
+    getFetch('meds', setMedsArr);
   }, []);
 
   return (
